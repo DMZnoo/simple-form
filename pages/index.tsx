@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-green-200 h-screen flex justify-center items-center">
+    <div className="bg-green-200 h-full flex justify-center items-center overflow-y-auto">
       <ContactUsForm />
     </div>
   );
