@@ -26,7 +26,7 @@ const ContactUsForm = () => {
     resolver: yupResolver(schema),
     shouldUnregister: true,
   });
-  const { errors, isDirty, isValid } = formState;
+  const { errors } = formState;
   const colourOptions = ["Blue", "Green", "Red", "Black", "Brown"];
   const animalOptions = ["Bear", "Snake", "Donkey"];
   const animalOptionsWithInput = {
@@ -117,7 +117,7 @@ const ContactUsForm = () => {
               type="password"
               placeholder="Password"
             />
-            <p className="mb-4">min: 8 characters</p>
+            <p className="mb-4">min: 9 characters</p>
             {errors.password && (
               <p className="text-red-500 text-sm -mt-4 mb-4">
                 {errors.password.message}
@@ -220,12 +220,7 @@ const ContactUsForm = () => {
           </div>
           <button
             type="submit"
-            className={`${
-              !isDirty || !isValid
-                ? "cursor-not-allowed bg-blue-200"
-                : "bg-blue-500"
-            } rounded-lg p-2 self-end mt-8 m-4 text-white`}
-            disabled={!isDirty || !isValid}
+            className={`bg-blue-500 rounded-lg p-2 self-end mt-8 m-4 text-white`}
           >
             Submit
           </button>
